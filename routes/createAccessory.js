@@ -1,27 +1,25 @@
-  
 var express = require('express');
 var router = express.Router();
-const Cube = require("../models/cube");
+const Accessory = require('../models/accessory');
 
 
 /* GET create listing. */
 router.get('/', function(req, res, next) {
-    res.render('create', { title: 'Create Cube Page', loggedInUser: req.user });
+    res.render('createAccessory', { title: 'Create Accessory', loggedInUser: req.user});
 });
 
-router.post('/', function(req, res, next) {
-    console.log('create post');
+router.post('/', function(req, res, next) {     //works!
+    console.log('create accessory post');
     console.log('~req', req.body);
     let data = req.body;
 
-    let cube = new Cube({
+    let accessory = new Accessory({
         name: data.name, 
-        description: data.description, 
         imageUrl: data.imageUrl, 
-        difficulty: data.difficultyLevel,
-        accessories: []
+        description: data.description, 
+        cubes: []
     });
-    cube.save()
+    accessory.save()
     .then((response) => {
         console.log(response);
         res.redirect('/');
