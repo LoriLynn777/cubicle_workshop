@@ -1,10 +1,17 @@
 {
-  "name": "03.-cubicle-workshop-part-1-resources",
+  "name": "cube_workshop",
   "version": "0.0.0",
-  "private": true,
+  "description": "Cube_Workshop_for_class",
+
   "scripts": {
     "start": "nodemon ./bin/www"
   },
+
+ "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoriLynn777/cubicle_workshop.git"
+  },
+
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
